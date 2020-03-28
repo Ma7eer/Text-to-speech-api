@@ -10,6 +10,7 @@ import database from './database';
  * routes.
  */
 import router from './api/v1/router';
+import { config } from './config';
 
 /**
  * Create Express server.
@@ -30,7 +31,21 @@ app.use(cookieParser());
 app.use(compression());
 
 // enable CORS - Cross Origin Resource Sharing
-app.use(cors());
+if (config.env === 'development') {
+  app.use(cors());
+} else {
+  const corsOptions = {
+    origin: function (origin, callback) {
+      if (config.whitelist.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  };
+  app.use(cors(corsOptions));
+}
 
 // secure servers by setting various HTTP headers
 app.use(helmet());

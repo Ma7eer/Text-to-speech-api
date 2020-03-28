@@ -9,5 +9,6 @@ if (result.error) {
 export const config = {
   env: process.env.NODE_ENV,
   port: process.env.PORT,
-  mongoUrl: process.env.MONGODB_URL
+  mongoUrl: process.env.MONGODB_URL,
+  whitelist: ['http://localhost:3000'] // change as per requirements
 };
