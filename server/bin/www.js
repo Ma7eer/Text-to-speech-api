@@ -8,12 +8,13 @@ import app from '../app';
 import debug from 'debug';
 debug('ma7eer-nodejs-api-boilerplate:server');
 import http from 'http';
+import { config } from '../config';
 
 /**
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || '3001');
+const port = normalizePort(config.port || '3001');
 app.set('port', port);
 
 /**
@@ -26,7 +27,9 @@ const server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(port, () =>
+  console.info(`Server started on port ${port} (${config.env})`)
+);
 server.on('error', onError);
 server.on('listening', onListening);
 
