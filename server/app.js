@@ -3,11 +3,14 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import compression from 'compression';
+import cors from 'cors';
+import helmet from 'helmet';
+require('dotenv').config(); // configure env variables
 
 /**
  * routes.
  */
-import indexRouter from './routes/index';
+import router from './api/v1/router';
 
 /**
  * Create Express server.
@@ -18,12 +21,23 @@ const app = express();
  * Express configuration.
  */
 app.use(logger('dev'));
+
+// parse body params and attache them to req.body
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+// gzip compression
 app.use(compression());
 
-app.use('/', indexRouter);
+// enable CORS - Cross Origin Resource Sharing
+app.use(cors());
+
+// secure servers by setting various HTTP headers
+app.use(helmet());
+
+// v1 routes
+app.use('/v1', router);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
