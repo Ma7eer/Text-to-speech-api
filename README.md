@@ -5,3 +5,4 @@
 - What is this?
 - How to start locally?
 - Key files
+- Boilerplate feature (linting, logging)
