@@ -3,5 +3,11 @@
     "ecmaVersion": 2019,
     "sourceType": "module"
   },
-  "extends": ["eslint:recommended"]
+  "env": {
+    "node": true
+  },
+  "extends": ["eslint:recommended"],
+  "rules": {
+    "strict": ["error", "never"]
+  }
 }

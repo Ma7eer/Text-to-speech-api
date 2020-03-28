@@ -10,7 +10,8 @@
     "prod": "cross-env NODE_ENV=production npm-run-all build server",
     "transpile": "babel ./server --out-dir dist-server",
     "clean": "rimraf dist-server",
-    "watch:dev": "nodemon"
+    "watch:dev": "nodemon",
+    "lint": "eslint ./server"
   },
   "babel": {
     "presets": [
