@@ -11,18 +11,18 @@ This project was put together and inspired by:
 
 ### Includes
 
-- Linting with eslint
-- Logging with morgan
-- ES6+ transpile with babel
-- Mongoose & MongoDB
-- SSL certification setup
-- Full CPU usage configured for production
-- Uses helmet to set some HTTP headers for security
-- Load environment variables from .env files with dotenv
-- Gzip compression with compression
-- Git hooks with husky
-- Testing (Future)
-- Documentation (Future)
+- [x] Linting with eslint
+- [x] Logging with morgan
+- [x] ES6+ transpile with babel
+- [x] Mongoose & MongoDB
+- [x] SSL certification setup
+- [x] Full CPU usage configured for production
+- [x] Uses helmet to set some HTTP headers for security
+- [x] Load environment variables from .env files with dotenv
+- [x] Gzip compression with compression
+- [x] Git hooks with husky
+- [x] Documentation
+- [ ] Testing (Future)
 
 ## Getting Started
 
@@ -73,3 +73,11 @@ npm start
 ```
 
 When you run this command babel will transpile the code into `dist-server` folder.
+
+## Documentation
+
+This api can be documented with potman documentation.
+
+An example of that can be seen in the following link:
+
+https://documenter.getpostman.com/view/2897708/SzYZ2JxH?version=latest
