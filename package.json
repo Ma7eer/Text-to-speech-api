@@ -1,7 +1,7 @@
 {
-  "name": "ma7eer-nodejs-api-boilerplate",
+  "name": "text-to-speech-api",
   "version": "1.0.0",
-  "description": "My personal boilerplate for starting a node js api using Express and MongoDB",
+  "description": "API that receives text and returns computer generated voice",
   "private": true,
   "scripts": {
     "start": "npm run prod",
@@ -44,7 +44,6 @@
     "express": "~4.16.1",
     "helmet": "^3.22.0",
     "http-errors": "~1.6.3",
-    "mongoose": "^5.9.6",
     "morgan": "~1.9.1"
   },
   "devDependencies": {

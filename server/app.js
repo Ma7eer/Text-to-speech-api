@@ -5,7 +5,6 @@ import logger from 'morgan';
 import compression from 'compression';
 import cors from 'cors';
 import helmet from 'helmet';
-import database from './database';
 /**
  * routes.
  */
@@ -68,8 +67,5 @@ app.use(function (err, req, res) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-// connect to database
-database.connect();
 
 export default app;
